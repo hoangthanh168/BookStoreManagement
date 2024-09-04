@@ -192,16 +192,3 @@
 2. **Hiển thị báo cáo**:
    - Hệ thống hiển thị báo cáo doanh thu tổng hợp theo ngày hoặc tháng.
 
----
-
-### **Tóm tắt luồng hoạt động**:
-
-1. **Khách hàng chọn sách và đến quầy thanh toán**.
-2. **Nhân viên đăng nhập và xử lý đơn hàng** (quét sách, tạo đơn hàng, tính toán số tiền).
-3. **Thanh toán** (với placeholder phương thức thanh toán đơn giản).
-4
-
-. **Cập nhật tồn kho sau khi bán**.
-5. **Xử lý trả hàng** (nếu có).
-6. **Quản lý và áp dụng thẻ thành viên** (nếu có).
-7. **Báo cáo doanh thu**.
