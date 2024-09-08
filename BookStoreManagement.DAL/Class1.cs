@@ -1,4 +1,4 @@
-﻿namespace BookStoreManagement.Core
+﻿namespace BookStoreManagement.DAL
 {
     public class Class1
     {
