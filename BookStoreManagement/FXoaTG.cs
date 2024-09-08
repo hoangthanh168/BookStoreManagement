@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BookStoreManagement
 {
-	public partial class fXoaSach : Form
+	public partial class FXoaTG : Form
 	{
-		public fXoaSach()
+		public FXoaTG()
 		{
 			InitializeComponent();
 		}
