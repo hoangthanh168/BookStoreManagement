@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace BookStoreManagement
 {
-    public partial class fLogin: Form
+    public partial class fDangNhap : Form
     {
-        public fLogin()
+        public fDangNhap()
         {
             InitializeComponent();
+        }
+
+        private void fDangNhap_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
