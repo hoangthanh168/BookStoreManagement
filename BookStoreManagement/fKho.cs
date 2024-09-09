@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace BookStoreManagement
 {
-    public partial class fThemSach : Form
+    public partial class fKho : Form
     {
-        public fThemSach()
+        public fKho()
         {
             InitializeComponent();
+        }
+
+        private void listView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
