@@ -168,12 +168,10 @@ namespace BookStoreManagement
 			// 
 			// btnThem
 			// 
-			btnThem.FlatAppearance.BorderColor = Color.Red;
-			btnThem.FlatAppearance.BorderSize = 5;
-			btnThem.FlatAppearance.MouseDownBackColor = Color.Gold;
-			btnThem.FlatAppearance.MouseOverBackColor = Color.DarkViolet;
-			btnThem.FlatStyle = FlatStyle.Flat;
-			btnThem.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic | FontStyle.Underline, GraphicsUnit.Point, 0);
+			btnThem.FlatAppearance.BorderColor = Color.White;
+			btnThem.FlatAppearance.MouseDownBackColor = Color.Transparent;
+			btnThem.FlatAppearance.MouseOverBackColor = Color.Transparent;
+			btnThem.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			btnThem.ForeColor = SystemColors.Desktop;
 			btnThem.Location = new Point(301, 335);
 			btnThem.Name = "btnThem";
@@ -189,8 +187,7 @@ namespace BookStoreManagement
 			btnThoat.FlatAppearance.BorderSize = 5;
 			btnThoat.FlatAppearance.MouseDownBackColor = Color.Gold;
 			btnThoat.FlatAppearance.MouseOverBackColor = Color.DarkViolet;
-			btnThoat.FlatStyle = FlatStyle.Flat;
-			btnThoat.Font = new Font("Segoe UI Semibold", 18F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+			btnThoat.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			btnThoat.ForeColor = SystemColors.Desktop;
 			btnThoat.Location = new Point(301, 424);
 			btnThoat.Name = "btnThoat";

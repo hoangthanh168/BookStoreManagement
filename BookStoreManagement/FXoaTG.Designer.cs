@@ -28,10 +28,10 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			ColumnHeader MãTG;
 			ListViewItem listViewItem1 = new ListViewItem(new string[] { "1", "Nguyen Van A", "Hue", "19XX", "19XX" }, -1);
 			ListViewItem listViewItem2 = new ListViewItem(new string[] { "2", "Pham Van B", "Quang Ngai", "188X", "19XX" }, -1);
 			ListViewItem listViewItem3 = new ListViewItem(new string[] { "3", "Pham Thi C", "Dong Nai", "199X", "20XX" }, -1);
-			ColumnHeader MãTG;
 			listView1 = new ListView();
 			TênTG = new ColumnHeader();
 			QQ = new ColumnHeader();
@@ -41,6 +41,11 @@
 			btnThoat = new Button();
 			MãTG = new ColumnHeader();
 			SuspendLayout();
+			// 
+			// MãTG
+			// 
+			MãTG.Text = "Mã tác giả";
+			MãTG.Width = 85;
 			// 
 			// listView1
 			// 
@@ -58,11 +63,6 @@
 			listView1.TabIndex = 1;
 			listView1.UseCompatibleStateImageBehavior = false;
 			listView1.View = View.Details;
-			// 
-			// MãTG
-			// 
-			MãTG.Text = "Mã tác giả";
-			MãTG.Width = 85;
 			// 
 			// TênTG
 			// 
@@ -94,8 +94,7 @@
 			btnXoaTG.FlatAppearance.BorderSize = 5;
 			btnXoaTG.FlatAppearance.MouseDownBackColor = Color.FromArgb(192, 192, 255);
 			btnXoaTG.FlatAppearance.MouseOverBackColor = Color.Blue;
-			btnXoaTG.FlatStyle = FlatStyle.Flat;
-			btnXoaTG.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			btnXoaTG.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			btnXoaTG.Location = new Point(37, 364);
 			btnXoaTG.Name = "btnXoaTG";
 			btnXoaTG.Size = new Size(258, 57);
@@ -109,8 +108,7 @@
 			btnThoat.FlatAppearance.BorderSize = 5;
 			btnThoat.FlatAppearance.MouseDownBackColor = Color.FromArgb(255, 255, 192);
 			btnThoat.FlatAppearance.MouseOverBackColor = Color.Yellow;
-			btnThoat.FlatStyle = FlatStyle.Flat;
-			btnThoat.Font = new Font("Segoe UI", 13.8F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			btnThoat.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			btnThoat.Location = new Point(483, 364);
 			btnThoat.Name = "btnThoat";
 			btnThoat.Size = new Size(171, 57);

@@ -30,9 +30,9 @@ namespace BookStoreManagement
 		private void InitializeComponent()
 		{
 			ColumnHeader MãTG;
-			ListViewItem listViewItem1 = new ListViewItem(new string[] { "1", "Nguyen Van A", "Hue", "19XX", "19XX" }, -1);
-			ListViewItem listViewItem2 = new ListViewItem(new string[] { "2", "Pham Van B", "Quang Ngai", "188X", "19XX" }, -1);
-			ListViewItem listViewItem3 = new ListViewItem(new string[] { "3", "Pham Thi C", "Dong Nai", "199X", "20XX" }, -1);
+			ListViewItem listViewItem4 = new ListViewItem(new string[] { "1", "Nguyen Van A", "Hue", "19XX", "19XX" }, -1);
+			ListViewItem listViewItem5 = new ListViewItem(new string[] { "2", "Pham Van B", "Quang Ngai", "188X", "19XX" }, -1);
+			ListViewItem listViewItem6 = new ListViewItem(new string[] { "3", "Pham Thi C", "Dong Nai", "199X", "20XX" }, -1);
 			listView1 = new ListView();
 			TênTG = new ColumnHeader();
 			QQ = new ColumnHeader();
@@ -67,10 +67,10 @@ namespace BookStoreManagement
 			listView1.Columns.AddRange(new ColumnHeader[] { MãTG, TênTG, QQ, NSinh, SMat });
 			listView1.FullRowSelect = true;
 			listView1.GridLines = true;
-			listViewItem1.StateImageIndex = 0;
-			listViewItem2.StateImageIndex = 0;
-			listViewItem3.StateImageIndex = 0;
-			listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2, listViewItem3 });
+			listViewItem4.StateImageIndex = 0;
+			listViewItem5.StateImageIndex = 0;
+			listViewItem6.StateImageIndex = 0;
+			listView1.Items.AddRange(new ListViewItem[] { listViewItem4, listViewItem5, listViewItem6 });
 			listView1.Location = new Point(12, 12);
 			listView1.Name = "listView1";
 			listView1.Size = new Size(558, 277);
@@ -109,8 +109,7 @@ namespace BookStoreManagement
 			btnChon.FlatAppearance.BorderSize = 5;
 			btnChon.FlatAppearance.MouseDownBackColor = Color.Gold;
 			btnChon.FlatAppearance.MouseOverBackColor = Color.DarkViolet;
-			btnChon.FlatStyle = FlatStyle.Flat;
-			btnChon.Font = new Font(".VnLucida sans", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			btnChon.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			btnChon.ForeColor = SystemColors.Desktop;
 			btnChon.Location = new Point(110, 325);
 			btnChon.Name = "btnChon";
@@ -126,8 +125,7 @@ namespace BookStoreManagement
 			btnLuu.FlatAppearance.BorderSize = 5;
 			btnLuu.FlatAppearance.MouseDownBackColor = Color.Gold;
 			btnLuu.FlatAppearance.MouseOverBackColor = Color.DarkViolet;
-			btnLuu.FlatStyle = FlatStyle.Flat;
-			btnLuu.Font = new Font("Verdana", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+			btnLuu.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			btnLuu.ForeColor = SystemColors.Desktop;
 			btnLuu.Location = new Point(734, 326);
 			btnLuu.Name = "btnLuu";
