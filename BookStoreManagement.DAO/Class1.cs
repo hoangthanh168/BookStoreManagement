@@ -1,4 +1,4 @@
-﻿namespace BookStoreManagement.DAL
+﻿namespace BookStoreManagement.DAO
 {
     public class Class1
     {
