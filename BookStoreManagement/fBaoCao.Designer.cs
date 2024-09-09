@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            ListViewItem listViewItem6 = new ListViewItem(new string[] { "SA0348", "Tieng Anh 12", "8" }, -1);
+            ListViewItem listViewItem1 = new ListViewItem(new string[] { "SA0348", "Tieng Anh 12", "8" }, -1);
             listView1 = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
@@ -44,10 +44,11 @@
             // 
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3 });
             listView1.GridLines = true;
-            listView1.Items.AddRange(new ListViewItem[] { listViewItem6 });
-            listView1.Location = new Point(38, 41);
+            listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
+            listView1.Location = new Point(11, 11);
+            listView1.Margin = new Padding(2, 2, 2, 2);
             listView1.Name = "listView1";
-            listView1.Size = new Size(877, 423);
+            listView1.Size = new Size(615, 289);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -72,9 +73,10 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(38, 502);
+            label9.Location = new Point(11, 322);
+            label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(161, 28);
+            label9.Size = new Size(115, 19);
             label9.TabIndex = 58;
             label9.Text = "Tổng Doanh Thu:";
             // 
@@ -82,9 +84,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(218, 557);
+            label1.Location = new Point(139, 360);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(128, 28);
+            label1.Size = new Size(87, 19);
             label1.TabIndex = 59;
             label1.Text = "60000 VND ";
             // 
@@ -92,9 +95,10 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.Location = new Point(218, 502);
+            label2.Location = new Point(139, 322);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(134, 28);
+            label2.Size = new Size(91, 19);
             label2.TabIndex = 60;
             label2.Text = "560000 VND";
             label2.Click += label2_Click;
@@ -103,36 +107,38 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(38, 557);
+            label3.Location = new Point(11, 360);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(105, 28);
+            label3.Size = new Size(75, 19);
             label3.TabIndex = 61;
             label3.Text = "Lợi Nhuận:";
             // 
             // button3
             // 
             button3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button3.Location = new Point(763, 525);
+            button3.Location = new Point(524, 379);
+            button3.Margin = new Padding(2, 2, 2, 2);
             button3.Name = "button3";
-            button3.Size = new Size(152, 38);
+            button3.Size = new Size(106, 26);
             button3.TabIndex = 64;
             button3.Text = "Thoát";
             button3.UseVisualStyleBackColor = true;
             // 
             // fBaoCao
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1221, 758);
+            ClientSize = new Size(641, 416);
             Controls.Add(button3);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(label9);
             Controls.Add(listView1);
+            Margin = new Padding(2, 2, 2, 2);
             Name = "fBaoCao";
             Text = "fBaoCao";
-            Load += this.fBaoCao_Load;
             ResumeLayout(false);
             PerformLayout();
         }

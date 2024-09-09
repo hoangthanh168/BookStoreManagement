@@ -40,11 +40,11 @@
             button4 = new Button();
             button3 = new Button();
             listView1 = new ListView();
-            listView2 = new ListView();
             columnHeader1 = new ColumnHeader();
             columnHeader2 = new ColumnHeader();
             columnHeader3 = new ColumnHeader();
             columnHeader4 = new ColumnHeader();
+            listView2 = new ListView();
             columnHeader5 = new ColumnHeader();
             columnHeader6 = new ColumnHeader();
             columnHeader7 = new ColumnHeader();
@@ -76,43 +76,48 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.Location = new Point(808, 386);
+            label5.Location = new Point(422, 181);
+            label5.Margin = new Padding(2, 0, 2, 0);
             label5.Name = "label5";
-            label5.Size = new Size(128, 28);
+            label5.Size = new Size(93, 19);
             label5.TabIndex = 44;
             label5.Text = "CHỌN SÁCH";
             // 
             // button5
             // 
-            button5.Location = new Point(612, 293);
+            button5.Location = new Point(282, 181);
+            button5.Margin = new Padding(2);
             button5.Name = "button5";
-            button5.Size = new Size(172, 39);
+            button5.Size = new Size(130, 26);
             button5.TabIndex = 38;
             button5.Text = "Chi Tiết Hóa Đơn";
             button5.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
-            button1.Location = new Point(504, 477);
+            button1.Location = new Point(331, 279);
+            button1.Margin = new Padding(2);
             button1.Name = "button1";
-            button1.Size = new Size(146, 31);
+            button1.Size = new Size(81, 26);
             button1.TabIndex = 37;
             button1.Text = "Lưu";
             button1.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(237, 433);
+            textBox1.Location = new Point(144, 249);
+            textBox1.Margin = new Padding(2);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(413, 31);
+            textBox1.Size = new Size(268, 25);
             textBox1.TabIndex = 35;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(66, 483);
+            label2.Location = new Point(24, 283);
+            label2.Margin = new Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new Size(104, 25);
+            label2.Size = new Size(76, 17);
             label2.TabIndex = 34;
             label2.Text = "* Ngày Lập:";
             label2.Click += label2_Click;
@@ -120,26 +125,29 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(66, 439);
+            label1.Location = new Point(24, 254);
+            label1.Margin = new Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new Size(155, 25);
+            label1.Size = new Size(114, 17);
             label1.TabIndex = 33;
             label1.Text = "* Tên Khách Hàng:";
             // 
             // button4
             // 
-            button4.Location = new Point(47, 293);
+            button4.Location = new Point(14, 181);
+            button4.Margin = new Padding(2);
             button4.Name = "button4";
-            button4.Size = new Size(146, 39);
+            button4.Size = new Size(130, 26);
             button4.TabIndex = 32;
             button4.Text = "Chọn Sửa";
             button4.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            button3.Location = new Point(262, 293);
+            button3.Location = new Point(148, 181);
+            button3.Margin = new Padding(2);
             button3.Name = "button3";
-            button3.Size = new Size(212, 39);
+            button3.Size = new Size(130, 26);
             button3.TabIndex = 31;
             button3.Text = "Xóa Hóa Đơn";
             button3.UseVisualStyleBackColor = true;
@@ -150,24 +158,13 @@
             listView1.Columns.AddRange(new ColumnHeader[] { columnHeader1, columnHeader2, columnHeader3, columnHeader4 });
             listView1.GridLines = true;
             listView1.Items.AddRange(new ListViewItem[] { listViewItem1 });
-            listView1.Location = new Point(47, 41);
+            listView1.Location = new Point(14, 9);
+            listView1.Margin = new Padding(2);
             listView1.Name = "listView1";
-            listView1.Size = new Size(737, 227);
+            listView1.Size = new Size(398, 156);
             listView1.TabIndex = 45;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
-            // 
-            // listView2
-            // 
-            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10 });
-            listView2.GridLines = true;
-            listView2.Items.AddRange(new ListViewItem[] { listViewItem2 });
-            listView2.Location = new Point(808, 41);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(1173, 227);
-            listView2.TabIndex = 46;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
             // 
             // columnHeader1
             // 
@@ -188,6 +185,19 @@
             // 
             columnHeader4.Text = "Tổng Tiền";
             columnHeader4.Width = 200;
+            // 
+            // listView2
+            // 
+            listView2.Columns.AddRange(new ColumnHeader[] { columnHeader5, columnHeader6, columnHeader7, columnHeader8, columnHeader9, columnHeader10 });
+            listView2.GridLines = true;
+            listView2.Items.AddRange(new ListViewItem[] { listViewItem2 });
+            listView2.Location = new Point(422, 9);
+            listView2.Margin = new Padding(2);
+            listView2.Name = "listView2";
+            listView2.Size = new Size(514, 156);
+            listView2.TabIndex = 46;
+            listView2.UseCompatibleStateImageBehavior = false;
+            listView2.View = View.Details;
             // 
             // columnHeader5
             // 
@@ -223,75 +233,84 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label6.Location = new Point(52, 386);
+            label6.Location = new Point(14, 218);
+            label6.Margin = new Padding(2, 0, 2, 0);
             label6.Name = "label6";
-            label6.Size = new Size(128, 28);
+            label6.Size = new Size(90, 19);
             label6.TabIndex = 47;
             label6.Text = "Sửa Hóa Đơn";
             // 
             // dateTimePicker1
             // 
-            dateTimePicker1.Location = new Point(237, 478);
+            dateTimePicker1.Location = new Point(144, 280);
+            dateTimePicker1.Margin = new Padding(2);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(261, 31);
+            dateTimePicker1.Size = new Size(184, 25);
             dateTimePicker1.TabIndex = 48;
             // 
             // label3
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label3.Location = new Point(52, 568);
+            label3.Location = new Point(14, 334);
+            label3.Margin = new Padding(2, 0, 2, 0);
             label3.Name = "label3";
-            label3.Size = new Size(128, 28);
+            label3.Size = new Size(90, 19);
             label3.TabIndex = 49;
             label3.Text = "Sửa Hóa Đơn";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(237, 618);
+            textBox2.Location = new Point(144, 366);
+            textBox2.Margin = new Padding(2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(413, 31);
+            textBox2.Size = new Size(268, 25);
             textBox2.TabIndex = 51;
             textBox2.Text = "HD0859";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(66, 624);
+            label4.Location = new Point(24, 370);
+            label4.Margin = new Padding(2, 0, 2, 0);
             label4.Name = "label4";
-            label4.Size = new Size(131, 25);
+            label4.Size = new Size(95, 17);
             label4.TabIndex = 50;
             label4.Text = "* Mã Hóa Đơn:";
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(237, 665);
+            textBox3.Location = new Point(144, 398);
+            textBox3.Margin = new Padding(2);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(413, 31);
+            textBox3.Size = new Size(268, 25);
             textBox3.TabIndex = 53;
             // 
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(66, 671);
+            label7.Location = new Point(24, 402);
+            label7.Margin = new Padding(2, 0, 2, 0);
             label7.Name = "label7";
-            label7.Size = new Size(155, 25);
+            label7.Size = new Size(114, 17);
             label7.TabIndex = 52;
             label7.Text = "* Tên Khách Hàng:";
             // 
             // dateTimePicker2
             // 
-            dateTimePicker2.Location = new Point(237, 718);
+            dateTimePicker2.Location = new Point(144, 434);
+            dateTimePicker2.Margin = new Padding(2);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(261, 31);
+            dateTimePicker2.Size = new Size(268, 25);
             dateTimePicker2.TabIndex = 55;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(66, 723);
+            label8.Location = new Point(24, 438);
+            label8.Margin = new Padding(2, 0, 2, 0);
             label8.Name = "label8";
-            label8.Size = new Size(104, 25);
+            label8.Size = new Size(76, 17);
             label8.TabIndex = 54;
             label8.Text = "* Ngày Lập:";
             // 
@@ -302,9 +321,10 @@
             listView3.GridLines = true;
             listViewItem3.StateImageIndex = 0;
             listView3.Items.AddRange(new ListViewItem[] { listViewItem3 });
-            listView3.Location = new Point(808, 439);
+            listView3.Location = new Point(422, 202);
+            listView3.Margin = new Padding(2);
             listView3.Name = "listView3";
-            listView3.Size = new Size(1173, 227);
+            listView3.Size = new Size(514, 156);
             listView3.TabIndex = 56;
             listView3.UseCompatibleStateImageBehavior = false;
             listView3.View = View.Details;
@@ -338,43 +358,47 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label9.Location = new Point(808, 718);
+            label9.Location = new Point(422, 372);
+            label9.Margin = new Padding(2, 0, 2, 0);
             label9.Name = "label9";
-            label9.Size = new Size(100, 28);
+            label9.Size = new Size(70, 19);
             label9.TabIndex = 57;
             label9.Text = "Số Lượng:";
             // 
             // domainUpDown1
             // 
-            domainUpDown1.Location = new Point(930, 718);
+            domainUpDown1.Location = new Point(496, 366);
+            domainUpDown1.Margin = new Padding(2);
             domainUpDown1.Name = "domainUpDown1";
-            domainUpDown1.Size = new Size(274, 31);
+            domainUpDown1.Size = new Size(192, 25);
             domainUpDown1.TabIndex = 58;
             domainUpDown1.Text = "1";
             // 
             // button2
             // 
-            button2.Location = new Point(1238, 719);
+            button2.Location = new Point(692, 367);
+            button2.Margin = new Padding(2);
             button2.Name = "button2";
-            button2.Size = new Size(106, 32);
+            button2.Size = new Size(74, 24);
             button2.TabIndex = 59;
             button2.Text = "Chọn ";
             button2.UseVisualStyleBackColor = true;
             // 
             // button6
             // 
-            button6.Location = new Point(1547, 708);
+            button6.Location = new Point(422, 429);
+            button6.Margin = new Padding(2);
             button6.Name = "button6";
-            button6.Size = new Size(319, 50);
+            button6.Size = new Size(514, 34);
             button6.TabIndex = 60;
             button6.Text = "Hoàn Thành Hóa Đơn";
             button6.UseVisualStyleBackColor = true;
             // 
             // fHoaDon
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(2032, 968);
+            ClientSize = new Size(953, 476);
             Controls.Add(button6);
             Controls.Add(button2);
             Controls.Add(domainUpDown1);
@@ -399,6 +423,7 @@
             Controls.Add(label1);
             Controls.Add(button4);
             Controls.Add(button3);
+            Margin = new Padding(2);
             Name = "fHoaDon";
             Text = "fHoaDon";
             Load += fHoaDon_Load;
