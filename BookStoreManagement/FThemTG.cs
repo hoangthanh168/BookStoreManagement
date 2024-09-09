@@ -16,5 +16,10 @@ namespace BookStoreManagement
 		{
 			InitializeComponent();
 		}
+
+		private void cbNSinh_SelectedIndexChanged(object sender, EventArgs e)
+		{
+
+		}
 	}
 }

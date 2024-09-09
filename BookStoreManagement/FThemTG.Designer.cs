@@ -1,4 +1,5 @@
-﻿namespace BookStoreManagement
+﻿
+namespace BookStoreManagement
 {
 	partial class FThemTG
 	{
@@ -36,8 +37,8 @@
 			textBox1 = new TextBox();
 			textBox2 = new TextBox();
 			textBox3 = new TextBox();
-			comboBox1 = new ComboBox();
-			comboBox2 = new ComboBox();
+			cbNSinh = new ComboBox();
+			cbNMat = new ComboBox();
 			checkBox1 = new CheckBox();
 			checkBox2 = new CheckBox();
 			checkBox4 = new CheckBox();
@@ -64,7 +65,7 @@
 			lbTenTG.Size = new Size(115, 28);
 			lbTenTG.TabIndex = 0;
 			lbTenTG.Text = "Tên tác giả";
-			lbTenTG.Click += this.lbTenTG_Click;
+			lbTenTG.Click += lbTenTG_Click;
 			// 
 			// lbQQ
 			// 
@@ -102,7 +103,7 @@
 			textBox1.Name = "textBox1";
 			textBox1.Size = new Size(333, 27);
 			textBox1.TabIndex = 1;
-			textBox1.TextChanged += this.textBox1_TextChanged;
+			textBox1.TextChanged += textBox1_TextChanged;
 			// 
 			// textBox2
 			// 
@@ -118,21 +119,22 @@
 			textBox3.Size = new Size(230, 27);
 			textBox3.TabIndex = 1;
 			// 
-			// comboBox1
+			// cbNSinh
 			// 
-			comboBox1.FormattingEnabled = true;
-			comboBox1.Location = new Point(199, 211);
-			comboBox1.Name = "comboBox1";
-			comboBox1.Size = new Size(230, 28);
-			comboBox1.TabIndex = 2;
+			cbNSinh.FormattingEnabled = true;
+			cbNSinh.Location = new Point(199, 211);
+			cbNSinh.Name = "cbNSinh";
+			cbNSinh.Size = new Size(230, 28);
+			cbNSinh.TabIndex = 2;
+			cbNSinh.SelectedIndexChanged += cbNSinh_SelectedIndexChanged;
 			// 
-			// comboBox2
+			// cbNMat
 			// 
-			comboBox2.FormattingEnabled = true;
-			comboBox2.Location = new Point(199, 266);
-			comboBox2.Name = "comboBox2";
-			comboBox2.Size = new Size(230, 28);
-			comboBox2.TabIndex = 2;
+			cbNMat.FormattingEnabled = true;
+			cbNMat.Location = new Point(199, 266);
+			cbNMat.Name = "cbNMat";
+			cbNMat.Size = new Size(230, 28);
+			cbNMat.TabIndex = 2;
 			// 
 			// checkBox1
 			// 
@@ -177,6 +179,7 @@
 			btnThem.Name = "btnThem";
 			btnThem.Size = new Size(209, 56);
 			btnThem.TabIndex = 4;
+			btnThem.TabStop = false;
 			btnThem.Text = "Thêm";
 			btnThem.UseVisualStyleBackColor = true;
 			// 
@@ -200,14 +203,14 @@
 			// 
 			AutoScaleDimensions = new SizeF(8F, 20F);
 			AutoScaleMode = AutoScaleMode.Font;
-			ClientSize = new Size(558, 511);
+			ClientSize = new Size(830, 511);
 			Controls.Add(btnThoat);
 			Controls.Add(btnThem);
 			Controls.Add(checkBox4);
 			Controls.Add(checkBox2);
 			Controls.Add(checkBox1);
-			Controls.Add(comboBox2);
-			Controls.Add(comboBox1);
+			Controls.Add(cbNMat);
+			Controls.Add(cbNSinh);
 			Controls.Add(textBox3);
 			Controls.Add(textBox2);
 			Controls.Add(textBox1);
@@ -222,6 +225,16 @@
 			PerformLayout();
 		}
 
+		private void textBox1_TextChanged(object sender, EventArgs e)
+		{
+			throw new NotImplementedException();
+		}
+
+		private void lbTenTG_Click(object sender, EventArgs e)
+		{
+			throw new NotImplementedException();
+		}
+
 		#endregion
 
 		private Label lbMaTG;
@@ -232,8 +245,8 @@
 		private TextBox textBox1;
 		private TextBox textBox2;
 		private TextBox textBox3;
-		private ComboBox comboBox1;
-		private ComboBox comboBox2;
+		private ComboBox cbNSinh;
+		private ComboBox cbNMat;
 		private CheckBox checkBox1;
 		private CheckBox checkBox2;
 		private CheckBox checkBox4;
