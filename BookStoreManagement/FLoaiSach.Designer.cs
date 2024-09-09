@@ -53,8 +53,7 @@
 			// 
 			btnXoaLV.FlatAppearance.BorderColor = Color.Gray;
 			btnXoaLV.FlatAppearance.BorderSize = 2;
-			btnXoaLV.FlatStyle = FlatStyle.Flat;
-			btnXoaLV.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+			btnXoaLV.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			btnXoaLV.Location = new Point(622, 384);
 			btnXoaLV.Name = "btnXoaLV";
 			btnXoaLV.Size = new Size(123, 28);
@@ -66,8 +65,7 @@
 			// 
 			btnThemLV.FlatAppearance.BorderColor = Color.Blue;
 			btnThemLV.FlatAppearance.BorderSize = 2;
-			btnThemLV.FlatStyle = FlatStyle.Flat;
-			btnThemLV.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+			btnThemLV.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
 			btnThemLV.Location = new Point(622, 330);
 			btnThemLV.Name = "btnThemLV";
 			btnThemLV.Size = new Size(123, 28);
