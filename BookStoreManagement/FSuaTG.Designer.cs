@@ -38,7 +38,6 @@ namespace BookStoreManagement
             QQ = new ColumnHeader();
             NSinh = new ColumnHeader();
             SMat = new ColumnHeader();
-            btnChon = new Button();
             btnLuu = new Button();
             checkBox4 = new CheckBox();
             checkBox2 = new CheckBox();
@@ -73,7 +72,7 @@ namespace BookStoreManagement
             listView1.Items.AddRange(new ListViewItem[] { listViewItem1, listViewItem2, listViewItem3 });
             listView1.Location = new Point(10, 10);
             listView1.Name = "listView1";
-            listView1.Size = new Size(489, 236);
+            listView1.Size = new Size(489, 414);
             listView1.TabIndex = 0;
             listView1.UseCompatibleStateImageBehavior = false;
             listView1.View = View.Details;
@@ -103,22 +102,6 @@ namespace BookStoreManagement
             SMat.TextAlign = HorizontalAlignment.Center;
             SMat.Width = 100;
             // 
-            // btnChon
-            // 
-            btnChon.FlatAppearance.BorderColor = Color.RoyalBlue;
-            btnChon.FlatAppearance.BorderSize = 5;
-            btnChon.FlatAppearance.MouseDownBackColor = Color.Gold;
-            btnChon.FlatAppearance.MouseOverBackColor = Color.DarkViolet;
-            btnChon.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            btnChon.ForeColor = SystemColors.Desktop;
-            btnChon.Location = new Point(10, 263);
-            btnChon.Name = "btnChon";
-            btnChon.Size = new Size(183, 48);
-            btnChon.TabIndex = 18;
-            btnChon.Text = "Chọn";
-            btnChon.UseVisualStyleBackColor = true;
-            btnChon.Click += btnThoat_Click;
-            // 
             // btnLuu
             // 
             btnLuu.FlatAppearance.BorderColor = Color.RoyalBlue;
@@ -127,9 +110,9 @@ namespace BookStoreManagement
             btnLuu.FlatAppearance.MouseOverBackColor = Color.DarkViolet;
             btnLuu.Font = new Font("Verdana", 10.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             btnLuu.ForeColor = SystemColors.Desktop;
-            btnLuu.Location = new Point(642, 277);
+            btnLuu.Location = new Point(785, 392);
             btnLuu.Name = "btnLuu";
-            btnLuu.Size = new Size(183, 48);
+            btnLuu.Size = new Size(100, 32);
             btnLuu.TabIndex = 19;
             btnLuu.Text = "Lưu";
             btnLuu.UseVisualStyleBackColor = true;
@@ -137,7 +120,7 @@ namespace BookStoreManagement
             // checkBox4
             // 
             checkBox4.AutoSize = true;
-            checkBox4.Location = new Point(866, 225);
+            checkBox4.Location = new Point(811, 144);
             checkBox4.Name = "checkBox4";
             checkBox4.Size = new Size(74, 21);
             checkBox4.TabIndex = 15;
@@ -147,7 +130,7 @@ namespace BookStoreManagement
             // checkBox2
             // 
             checkBox2.AutoSize = true;
-            checkBox2.Location = new Point(831, 130);
+            checkBox2.Location = new Point(811, 111);
             checkBox2.Name = "checkBox2";
             checkBox2.Size = new Size(74, 21);
             checkBox2.TabIndex = 16;
@@ -158,7 +141,7 @@ namespace BookStoreManagement
             // checkBox1
             // 
             checkBox1.AutoSize = true;
-            checkBox1.Location = new Point(831, 92);
+            checkBox1.Location = new Point(811, 80);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(74, 21);
             checkBox1.TabIndex = 17;
@@ -169,7 +152,7 @@ namespace BookStoreManagement
             // cbNmat
             // 
             cbNmat.FormattingEnabled = true;
-            cbNmat.Location = new Point(631, 162);
+            cbNmat.Location = new Point(611, 142);
             cbNmat.Name = "cbNmat";
             cbNmat.Size = new Size(192, 25);
             cbNmat.TabIndex = 13;
@@ -177,7 +160,7 @@ namespace BookStoreManagement
             // cbNsinh
             // 
             cbNsinh.FormattingEnabled = true;
-            cbNsinh.Location = new Point(631, 128);
+            cbNsinh.Location = new Point(611, 109);
             cbNsinh.Name = "cbNsinh";
             cbNsinh.Size = new Size(192, 25);
             cbNsinh.TabIndex = 14;
@@ -185,21 +168,21 @@ namespace BookStoreManagement
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(631, 88);
+            textBox3.Location = new Point(611, 78);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(192, 25);
             textBox3.TabIndex = 10;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(631, 47);
+            textBox2.Location = new Point(611, 43);
             textBox2.Name = "textBox2";
             textBox2.Size = new Size(274, 25);
             textBox2.TabIndex = 11;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(631, 12);
+            textBox1.Location = new Point(611, 12);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(274, 25);
             textBox1.TabIndex = 12;
@@ -209,7 +192,7 @@ namespace BookStoreManagement
             // 
             lbNMat.AutoSize = true;
             lbNMat.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            lbNMat.Location = new Point(523, 162);
+            lbNMat.Location = new Point(507, 142);
             lbNMat.Name = "lbNMat";
             lbNMat.Size = new Size(85, 21);
             lbNMat.TabIndex = 5;
@@ -219,7 +202,7 @@ namespace BookStoreManagement
             // 
             lbNSinh.AutoSize = true;
             lbNSinh.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            lbNSinh.Location = new Point(520, 128);
+            lbNSinh.Location = new Point(505, 108);
             lbNSinh.Name = "lbNSinh";
             lbNSinh.Size = new Size(87, 21);
             lbNSinh.TabIndex = 6;
@@ -229,7 +212,7 @@ namespace BookStoreManagement
             // 
             lbQQ.AutoSize = true;
             lbQQ.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            lbQQ.Location = new Point(523, 88);
+            lbQQ.Location = new Point(505, 77);
             lbQQ.Name = "lbQQ";
             lbQQ.Size = new Size(84, 21);
             lbQQ.TabIndex = 7;
@@ -240,7 +223,7 @@ namespace BookStoreManagement
             // 
             lbTenTG.AutoSize = true;
             lbTenTG.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            lbTenTG.Location = new Point(518, 47);
+            lbTenTG.Location = new Point(505, 47);
             lbTenTG.Name = "lbTenTG";
             lbTenTG.Size = new Size(92, 21);
             lbTenTG.TabIndex = 8;
@@ -250,7 +233,7 @@ namespace BookStoreManagement
             // 
             lbMaTG.AutoSize = true;
             lbMaTG.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 163);
-            lbMaTG.Location = new Point(518, 10);
+            lbMaTG.Location = new Point(505, 12);
             lbMaTG.Name = "lbMaTG";
             lbMaTG.Size = new Size(89, 21);
             lbMaTG.TabIndex = 9;
@@ -260,8 +243,7 @@ namespace BookStoreManagement
             // 
             AutoScaleDimensions = new SizeF(7F, 17F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(949, 436);
-            Controls.Add(btnChon);
+            ClientSize = new Size(898, 436);
             Controls.Add(btnLuu);
             Controls.Add(checkBox4);
             Controls.Add(checkBox2);
@@ -325,7 +307,6 @@ namespace BookStoreManagement
 		private ColumnHeader QQ;
 		private ColumnHeader NSinh;
 		private ColumnHeader SMat;
-		private Button btnChon;
 		private Button btnLuu;
 		private CheckBox checkBox4;
 		private CheckBox checkBox2;
