@@ -1,4 +1,4 @@
-﻿namespace BookStoreManagement.BLL
+﻿namespace BookStoreManagement.DTO
 {
     public class Class1
     {
