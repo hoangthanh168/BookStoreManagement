@@ -3,10 +3,201 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:BookStoreManagement.Views"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:models="clr-namespace:BookStoreManagement.Models"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="800" d:DesignWidth="1200">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Left Section: List of Accounts -->
+        <GroupBox Header="Danh sách tài khoản" FontSize="16" FontWeight="Bold" Margin="0,0,10,0">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- Search and Action Buttons -->
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+                    <TextBox Controls:TextBoxHelper.Watermark="Tìm kiếm tài khoản..." 
+                             Width="200" 
+                             Margin="0,0,10,0"
+                             Text="{Binding SearchKeyword, UpdateSourceTrigger=PropertyChanged}" />
+                    <Button Content="Tìm kiếm" 
+                            Width="100" 
+                            Height="30" 
+                            Background="#FF2196F3" 
+                            Foreground="White" 
+                            Command="{Binding SearchCommand}" 
+                            Margin="0,0,10,0"/>
+                    <Button Content="Thêm tài khoản" 
+                            Width="150" 
+                            Height="30" 
+                            Background="#FF4CAF50" 
+                            Foreground="White" 
+                            Command="{Binding AddAccountCommand}"/>
+                </StackPanel>
+
+                <!-- DataGrid Listing Accounts -->
+                <DataGrid ItemsSource="{Binding Accounts}" 
+                          SelectedItem="{Binding SelectedAccount}" 
+                          AutoGenerateColumns="False" 
+                          CanUserAddRows="False" 
+                          CanUserDeleteRows="False" 
+                          IsReadOnly="True" 
+                          Grid.Row="1">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding AccountId}" Width="50"/>
+                        <DataGridTextColumn Header="Tài khoản" Binding="{Binding Username}" Width="*"/>
+                        <DataGridTextColumn Header="Nhân viên" Binding="{Binding EmployeeName}" Width="150"/>
+                        <DataGridCheckBoxColumn Header="Admin" Binding="{Binding IsAdmin}" Width="80"/>
+                        <DataGridTextColumn Header="Mã bảo mật" Binding="{Binding SecurityCode}" Width="120"/>
+                        <DataGridTextColumn Header="Ngày tạo" Binding="{Binding CreationDate, StringFormat='dd/MM/yyyy'}" Width="120"/>
+                        <DataGridTextColumn Header="Ngày cập nhật" Binding="{Binding LastUpdate, StringFormat='dd/MM/yyyy'}" Width="120"/>
+                        <DataGridTemplateColumn Header="Hành động" Width="150">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Button Content="Sửa" 
+                                                Width="60" 
+                                                Height="25" 
+                                                Background="#FFFFC107" 
+                                                Foreground="White" 
+                                                Margin="0,0,5,0"
+                                                Command="{Binding DataContext.EditAccountCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                                CommandParameter="{Binding}" />
+                                        <Button Content="Xóa" 
+                                                Width="60" 
+                                                Height="25" 
+                                                Background="#FFF44336" 
+                                                Foreground="White"
+                                                Command="{Binding DataContext.DeleteAccountCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                                CommandParameter="{Binding}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+
+        <!-- Right Section: Account Details -->
+        <GroupBox Header="Chi tiết tài khoản" FontSize="16" FontWeight="Bold" Grid.Column="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10">
+                <StackPanel>
+                    <!-- Account Information Form -->
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+                        <!-- Username -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Tài khoản:" 
+                                       Width="150" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold"/>
+                            <TextBox Controls:TextBoxHelper.Watermark="Nhập tài khoản" 
+                                     Text="{Binding SelectedAccount.Username, UpdateSourceTrigger=PropertyChanged}" 
+                                     Width="250"/>
+                        </StackPanel>
+
+                        <!-- Password -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Mật khẩu:" 
+                                       Width="150" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold"/>
+                            <PasswordBox x:Name="PasswordBox" 
+                                         Width="250" 
+                                         Tag="{Binding SelectedAccount.Password, Mode=TwoWay}"></PasswordBox> 
+                        </StackPanel>
+
+                        <!-- Employee -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Nhân viên:" 
+                                       Width="150" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold"/>
+                            <ComboBox ItemsSource="{Binding Employees}" 
+                                      SelectedItem="{Binding SelectedAccount.Employee, UpdateSourceTrigger=PropertyChanged}" 
+                                      DisplayMemberPath="FullName" 
+                                      Width="250"
+                                      Controls:TextBoxHelper.Watermark="Chọn nhân viên"/>
+                        </StackPanel>
+
+                        <!-- Admin Rights -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Admin:" 
+                                       Width="150" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold"/>
+                            <CheckBox IsChecked="{Binding SelectedAccount.IsAdmin, UpdateSourceTrigger=PropertyChanged}" 
+                                      Content="Quyền quản trị" 
+                                      VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <!-- Security Code -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Mã bảo mật:" 
+                                       Width="150" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold"/>
+                            <TextBox Controls:TextBoxHelper.Watermark="Nhập mã bảo mật" 
+                                     Text="{Binding SelectedAccount.SecurityCode, UpdateSourceTrigger=PropertyChanged}" 
+                                     Width="250"/>
+                        </StackPanel>
+
+                        <!-- Creation Date -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Ngày tạo:" 
+                                       Width="150" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold"/>
+                            <TextBlock Text="{Binding SelectedAccount.CreationDate, StringFormat='dd/MM/yyyy'}" 
+                                       Width="250" 
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+
+                        <!-- Last Update -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Ngày cập nhật:" 
+                                       Width="150" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold"/>
+                            <TextBlock Text="{Binding SelectedAccount.LastUpdate, StringFormat='dd/MM/yyyy'}" 
+                                       Width="250" 
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Action Buttons -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,20">
+                        <Button Content="Lưu" 
+                                Width="100" 
+                                Height="35" 
+                                Background="#FF4CAF50" 
+                                Foreground="White" 
+                                FontWeight="Bold" 
+                                Command="{Binding SaveAccountCommand}" 
+                                Margin="0,0,10,0"/>
+                        <Button Content="Hủy" 
+                                Width="100" 
+                                Height="35" 
+                                Background="#FFF44336" 
+                                Foreground="White" 
+                                FontWeight="Bold" 
+                                Command="{Binding CancelEditCommand}"/>
+                    </StackPanel>
+
+                    <!-- Additional Account Information (Optional) -->
+                    <!-- You can add more sections here if needed, such as role assignments, permissions, etc. -->
+                </StackPanel>
+            </ScrollViewer>
+        </GroupBox>
     </Grid>
 </UserControl>

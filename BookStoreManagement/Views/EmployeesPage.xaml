@@ -3,10 +3,258 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:BookStoreManagement.Views"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:models="clr-namespace:BookStoreManagement.Models"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="800" d:DesignWidth="1200">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Left Section: List of Employees -->
+        <GroupBox Header="Danh sách nhân viên" FontSize="16" FontWeight="Bold" Margin="0,0,10,0">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Search and Action Buttons -->
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+                    <TextBox Controls:TextBoxHelper.Watermark="Tìm kiếm nhân viên..." 
+                             Width="200" 
+                             Margin="0,0,10,0"
+                             Text="{Binding SearchKeyword, UpdateSourceTrigger=PropertyChanged}" />
+                    <Button Content="Tìm kiếm" 
+                            Width="100" 
+                            Height="30" 
+                            Background="#FF2196F3" 
+                            Foreground="White" 
+                            Command="{Binding SearchCommand}" 
+                            Margin="0,0,10,0"/>
+                    <Button Content="Thêm nhân viên" 
+                            Width="150" 
+                            Height="30" 
+                            Background="#FF4CAF50" 
+                            Foreground="White" 
+                            Command="{Binding AddEmployeeCommand}"/>
+                </StackPanel>
+
+                <!-- DataGrid Listing Employees -->
+                <DataGrid ItemsSource="{Binding Employees}" 
+                          SelectedItem="{Binding SelectedEmployee}" 
+                          AutoGenerateColumns="False" 
+                          CanUserAddRows="False" 
+                          CanUserDeleteRows="False" 
+                          IsReadOnly="True" 
+                          Grid.Row="1"
+                          EnableRowVirtualization="True"
+                          EnableColumnVirtualization="True"
+                          SelectionMode="Single"
+                          SelectionUnit="FullRow">
+                    <DataGrid.Columns>
+                        <!-- Serial Number Column -->
+                      
+
+                        <!-- Full Name -->
+                        <DataGridTextColumn Header="Họ Tên" 
+                                            Binding="{Binding FullName}" 
+                                            Width="*"/>
+
+                        <!-- Gender -->
+                        <DataGridTextColumn Header="Giới tính" 
+                                            Binding="{Binding Gender}" 
+                                            Width="100"/>
+
+                        <!-- Date of Birth -->
+                        <DataGridTextColumn Header="Ngày sinh" 
+                                            Binding="{Binding DateOfBirth, StringFormat='dd/MM/yyyy'}" 
+                                            Width="120"/>
+
+                        <!-- Hometown -->
+                        <DataGridTextColumn Header="Quê quán" 
+                                            Binding="{Binding Hometown}" 
+                                            Width="150"/>
+
+                        <!-- Phone Number -->
+                        <DataGridTextColumn Header="Số điện thoại" 
+                                            Binding="{Binding PhoneNumber}" 
+                                            Width="120"/>
+
+                        <!-- Email -->
+                        <DataGridTextColumn Header="Email" 
+                                            Binding="{Binding Email}" 
+                                            Width="200"/>
+
+                        <!-- Start Date -->
+                        <DataGridTextColumn Header="Ngày vào làm" 
+                                            Binding="{Binding StartDate, StringFormat='dd/MM/yyyy'}" 
+                                            Width="120"/>
+
+                        <!-- Issued Account -->
+                        <DataGridTextColumn Header="Tài khoản được cấp" 
+                                            Binding="{Binding IssuedAccount}" 
+                                            Width="150"/>
+
+                        <!-- Actions -->
+                        <DataGridTemplateColumn Header="Hành động" Width="150">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Button Content="Sửa" 
+                                                Width="60" 
+                                                Height="25" 
+                                                Background="#FFFFC107" 
+                                                Foreground="White" 
+                                                Margin="0,0,5,0"
+                                                Command="{Binding DataContext.EditEmployeeCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                                CommandParameter="{Binding}" />
+                                        <Button Content="Xóa" 
+                                                Width="60" 
+                                                Height="25" 
+                                                Background="#FFF44336" 
+                                                Foreground="White"
+                                                Command="{Binding DataContext.DeleteEmployeeCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                                CommandParameter="{Binding}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+
+        <!-- Right Section: Employee Details and Actions -->
+        <GroupBox Header="Chi tiết nhân viên" FontSize="16" FontWeight="Bold" Grid.Column="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10">
+                <StackPanel>
+                    <!-- Full Name -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Text="Họ Tên:" 
+                                   Width="150" 
+                                   VerticalAlignment="Center" 
+                                   FontWeight="Bold"/>
+                        <TextBox Controls:TextBoxHelper.Watermark="Nhập họ tên" 
+                                 Text="{Binding SelectedEmployee.FullName, UpdateSourceTrigger=PropertyChanged}" 
+                                 Width="200"/>
+                    </StackPanel>
+
+                    <!-- Gender -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Text="Giới tính:" 
+                                   Width="150" 
+                                   VerticalAlignment="Center" 
+                                   FontWeight="Bold"/>
+                        <ComboBox SelectedItem="{Binding SelectedEmployee.Gender, UpdateSourceTrigger=PropertyChanged}" 
+                                  Width="200">
+                            <ComboBoxItem Content="Nam" />
+                            <ComboBoxItem Content="Nữ" />
+                            <ComboBoxItem Content="Khác" />
+                        </ComboBox>
+                    </StackPanel>
+
+                    <!-- Date of Birth -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Text="Ngày sinh:" 
+                                   Width="150" 
+                                   VerticalAlignment="Center" 
+                                   FontWeight="Bold"/>
+                        <DatePicker SelectedDate="{Binding SelectedEmployee.DateOfBirth, UpdateSourceTrigger=PropertyChanged}" 
+                                    Width="200"/>
+                    </StackPanel>
+
+                    <!-- Hometown -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Text="Quê quán:" 
+                                   Width="150" 
+                                   VerticalAlignment="Center" 
+                                   FontWeight="Bold"/>
+                        <TextBox Controls:TextBoxHelper.Watermark="Nhập quê quán" 
+                                 Text="{Binding SelectedEmployee.Hometown, UpdateSourceTrigger=PropertyChanged}" 
+                                 Width="200"/>
+                    </StackPanel>
+
+                    <!-- Phone Number -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Text="Số điện thoại:" 
+                                   Width="150" 
+                                   VerticalAlignment="Center" 
+                                   FontWeight="Bold"/>
+                        <TextBox Controls:TextBoxHelper.Watermark="Nhập số điện thoại" 
+                                 Text="{Binding SelectedEmployee.PhoneNumber, UpdateSourceTrigger=PropertyChanged}" 
+                                 Width="200"/>
+                    </StackPanel>
+
+                    <!-- Email -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Text="Email:" 
+                                   Width="150" 
+                                   VerticalAlignment="Center" 
+                                   FontWeight="Bold"/>
+                        <TextBox Controls:TextBoxHelper.Watermark="Nhập email" 
+                                 Text="{Binding SelectedEmployee.Email, UpdateSourceTrigger=PropertyChanged}" 
+                                 Width="200"/>
+                    </StackPanel>
+
+                    <!-- Start Date -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Text="Ngày vào làm:" 
+                                   Width="150" 
+                                   VerticalAlignment="Center" 
+                                   FontWeight="Bold"/>
+                        <DatePicker SelectedDate="{Binding SelectedEmployee.StartDate, UpdateSourceTrigger=PropertyChanged}" 
+                                    Width="200"/>
+                    </StackPanel>
+
+                    <!-- Issued Account -->
+                    <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                        <TextBlock Text="Tài khoản được cấp:" 
+                                   Width="150" 
+                                   VerticalAlignment="Center" 
+                                   FontWeight="Bold"/>
+                        <TextBox Controls:TextBoxHelper.Watermark="Nhập tài khoản" 
+                                 Text="{Binding SelectedEmployee.IssuedAccount, UpdateSourceTrigger=PropertyChanged}" 
+                                 Width="200"/>
+                    </StackPanel>
+
+                    <!-- Notes -->
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                        <TextBlock Text="Ghi chú:" 
+                                   FontWeight="Bold" 
+                                   Margin="0,0,0,5"/>
+                        <TextBox Controls:TextBoxHelper.Watermark="Nhập ghi chú" 
+                                 Text="{Binding SelectedEmployee.Notes, UpdateSourceTrigger=PropertyChanged}" 
+                                 AcceptsReturn="True" 
+                                 Height="100" 
+                                 TextWrapping="Wrap"/>
+                    </StackPanel>
+
+                    <!-- Action Buttons -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,20,0,0">
+                        <Button Content="Lưu" 
+                                Width="100" 
+                                Height="35" 
+                                Background="#FF4CAF50" 
+                                Foreground="White" 
+                                FontWeight="Bold" 
+                                Command="{Binding SaveEmployeeCommand}" 
+                                Margin="0,0,10,0"/>
+                        <Button Content="Hủy" 
+                                Width="100" 
+                                Height="35" 
+                                Background="#FFF44336" 
+                                Foreground="White" 
+                                FontWeight="Bold" 
+                                Command="{Binding CancelEditCommand}"/>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </GroupBox>
     </Grid>
 </UserControl>

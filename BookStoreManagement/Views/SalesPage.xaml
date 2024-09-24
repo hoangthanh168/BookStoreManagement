@@ -3,10 +3,203 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:BookStoreManagement.Views"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:models="clr-namespace:BookStoreManagement.Models"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="800" d:DesignWidth="1200">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Header="Thông tin khách hàng" FontSize="16" FontWeight="Bold" Grid.Row="0" Grid.ColumnSpan="2" Margin="0,0,0,20">
+            <Grid Margin="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="1.5*" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Text="Tên khách hàng" FontWeight="Bold" Margin="5" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center"/>
+                <TextBox Controls:TextBoxHelper.Watermark="Nhập tên khách hàng" Margin="5" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch"/>
+
+                <TextBlock Text="Số điện thoại" FontWeight="Bold" Margin="5" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center"/>
+                <TextBox Controls:TextBoxHelper.Watermark="Nhập số điện thoại" Margin="5" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch"/>
+
+                <TextBlock Text="Giới tính" FontWeight="Bold" Margin="5" Grid.Row="0" Grid.Column="2" VerticalAlignment="Center"/>
+                <ComboBox Margin="5" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch">
+                    <ComboBoxItem Content="Nam"/>
+                    <ComboBoxItem Content="Nữ"/>
+                    <ComboBoxItem Content="Khác"/>
+                </ComboBox>
+
+                <TextBlock Text="Địa chỉ" FontWeight="Bold" Margin="5" Grid.Row="0" Grid.Column="3" VerticalAlignment="Center"/>
+                <TextBox Controls:TextBoxHelper.Watermark="Nhập địa chỉ" Margin="5" Grid.Row="1" Grid.Column="3" HorizontalAlignment="Stretch"/>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Danh sách sản phẩm" FontSize="16" FontWeight="Bold" Grid.Row="1" Grid.RowSpan="2" Grid.Column="0" Margin="0,0,10,0">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- Đặt ComboBox và TextBox trong một StackPanel ngang -->
+                <Grid Grid.Row="0" Margin="0,0,0,10">
+                    <!-- Định nghĩa các cột, cột đầu chiếm 2/3 và cột thứ hai chiếm 1/3 -->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- TextBox chiếm 2/3 -->
+                    <TextBox Controls:TextBoxHelper.Watermark="Tìm kiếm sản phẩm..." 
+                    Text="{Binding SearchKeyword, UpdateSourceTrigger=PropertyChanged}" 
+                    Grid.Column="0" 
+                    Margin="0,0,10,0"/>
+
+                    <!-- ComboBox chiếm 1/3 -->
+                    <ComboBox SelectedItem="{Binding SelectedSortOption, UpdateSourceTrigger=PropertyChanged}" 
+                    Grid.Column="1"
+                   >
+                        <ComboBoxItem Content="Giá: Thấp đến Cao" />
+                        <ComboBoxItem Content="Giá: Cao đến Thấp" />
+                    </ComboBox>
+                </Grid>
+
+
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Grid.Row="1">
+                    <ItemsControl>
+                        <ItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <!-- Đổi từ WrapPanel sang UniformGrid -->
+                                <UniformGrid Columns="2" />
+                            </ItemsPanelTemplate>
+                        </ItemsControl.ItemsPanel>
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border BorderBrush="Gray" BorderThickness="1" CornerRadius="5" Padding="10" Margin="5">
+                                    <StackPanel>
+                                        <Image Source="{Binding ProductImage}" Width="220" Height="150" Stretch="Uniform" Margin="0,0,0,10"/>
+                                        <TextBlock Text="{Binding ProductName}" FontWeight="Bold" FontSize="14" TextAlignment="Center" Margin="0,0,0,5"/>
+                                        <TextBlock Text="{Binding Price, StringFormat='{}{0:N0} VND'}" Foreground="Green" FontSize="12" TextAlignment="Center" Margin="0,0,0,10"/>
+                                        <Button Content="Thêm vào giỏ" Width="100" Height="30" Background="#FF4CAF50" Foreground="White" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+
+                        <!-- Dữ liệu mẫu trực tiếp -->
+                        <ItemsControl.ItemsSource>
+                            <x:Array Type="{x:Type models:Product}">
+                                <models:Product ProductName="Sách 1" Price="50000" ProductImage="pack://application:,,,/Resources/sach1.jpg" />
+                                <models:Product ProductName="Sách 2" Price="60000" ProductImage="pack://application:,,,/Resources/sach2.png" />
+                                <models:Product ProductName="Sách 3" Price="75000" ProductImage="pack://application:,,,/Resources/sach3.jpg" />
+                                <models:Product ProductName="Sách 4" Price="75000" ProductImage="pack://application:,,,/Resources/sach4.png" />
+                            </x:Array>
+                        </ItemsControl.ItemsSource>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
+        </GroupBox>
+
+
+
+
+        <GroupBox Header="Giỏ hàng" FontSize="16" FontWeight="Bold" Grid.Row="1" Grid.Column="1" Margin="0,0,0,0">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <DataGrid ItemsSource="{Binding CartItems}" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" Margin="0,0,0,10">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="STT" Binding="{Binding STT}" Width="50" />
+                        <DataGridTextColumn Header="Sản phẩm" Binding="{Binding ProductName}" Width="2*" />
+                        <DataGridTextColumn Header="Đơn giá" Binding="{Binding Price, StringFormat='{}{0:N0} VND'}" Width="120" />
+                        <DataGridTextColumn Header="Số lượng" Binding="{Binding Quantity}" Width="100" />
+                        <DataGridTextColumn Header="Thành tiền" Binding="{Binding TotalPrice, StringFormat='{}{0:N0} VND'}" Width="150" />
+                        <DataGridTemplateColumn Header="Hành động" Width="120">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Content="Xóa" 
+                    Width="60" 
+                    Height="25" 
+                    Background="#FFF44336" 
+                    Foreground="White" 
+                    Command="{Binding DataContext.RemoveFromCartCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
+                    CommandParameter="{Binding}" />
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Header="Thanh toán" FontSize="16" FontWeight="Bold" Grid.Row="2" Grid.Column="1" Margin="0,20,0,0">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="Tổng hóa đơn:" FontWeight="Bold" FontSize="14" Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <TextBlock Text="{Binding TotalPrice, StringFormat='{}{0:N0} VND'}" FontSize="14" Foreground="Green" Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" Margin="5,5,0,5"/>
+
+                <TextBlock Text="Tiền khách trả:" FontWeight="Bold" FontSize="14" Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <TextBox 
+            Controls:TextBoxHelper.Watermark="Nhập số tiền" 
+            Text="{Binding PaymentAmount, UpdateSourceTrigger=PropertyChanged}" 
+            HorizontalAlignment="Stretch" 
+            MinWidth="150" 
+            Grid.Row="1" Grid.Column="1" 
+            Margin="5,5,0,5"/>
+
+                <TextBlock Text="Tiền thừa:" FontWeight="Bold" FontSize="14" Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" Margin="0,5"/>
+                <TextBlock Text="{Binding ChangeAmount, StringFormat='{}{0:N0} VND'}" FontSize="14" Foreground="Red" Grid.Row="2" Grid.Column="1" VerticalAlignment="Center" Margin="5,5,0,5"/>
+
+                <StackPanel Grid.Row="3" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,0">
+                    <Button Content="Thanh toán" 
+                    Width="120" 
+                    Height="35" 
+                    Background="#FF2196F3" 
+                    Foreground="White" 
+                    FontWeight="Bold" 
+                    Command="{Binding CheckoutCommand}" 
+                    Margin="0,0,10,0" 
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Top" />
+                    <Button Content="Hủy" 
+                    Width="120" 
+                    Height="35" 
+                    Background="#FFF44336" 
+                    Foreground="White" 
+                    FontWeight="Bold" 
+                    Command="{Binding CancelCommand}" 
+                    HorizontalAlignment="Right" 
+                    VerticalAlignment="Top" />
+                </StackPanel>
+            </Grid>
+        </GroupBox>
     </Grid>
 </UserControl>

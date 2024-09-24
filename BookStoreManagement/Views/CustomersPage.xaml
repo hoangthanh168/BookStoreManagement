@@ -3,10 +3,196 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:BookStoreManagement.Views"
+             xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
+             xmlns:models="clr-namespace:BookStoreManagement.Models"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             d:DesignHeight="800" d:DesignWidth="1200">
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Left Section: List of Customers -->
+        <GroupBox Header="Danh sách khách hàng" FontSize="16" FontWeight="Bold" Margin="0,0,10,0">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <!-- Search and Action Buttons -->
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="0,0,0,10">
+                    <TextBox Controls:TextBoxHelper.Watermark="Tìm kiếm khách hàng..." 
+                             Width="200" 
+                             Margin="0,0,10,0"
+                             Text="{Binding SearchKeyword, UpdateSourceTrigger=PropertyChanged}" />
+                    <Button Content="Tìm kiếm" 
+                            Width="100" 
+                            Height="30" 
+                            Background="#FF2196F3" 
+                            Foreground="White" 
+                            Command="{Binding SearchCommand}" 
+                            Margin="0,0,10,0"/>
+                    <Button Content="Thêm khách hàng" 
+                            Width="150" 
+                            Height="30" 
+                            Background="#FF4CAF50" 
+                            Foreground="White" 
+                            Command="{Binding AddCustomerCommand}"/>
+                </StackPanel>
+
+                <!-- DataGrid Listing Customers -->
+                <DataGrid ItemsSource="{Binding Customers}" 
+                          SelectedItem="{Binding SelectedCustomer}" 
+                          AutoGenerateColumns="False" 
+                          CanUserAddRows="False" 
+                          CanUserDeleteRows="False" 
+                          IsReadOnly="True" 
+                          Grid.Row="1">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Header="ID" Binding="{Binding CustomerId}" Width="50"/>
+                        <DataGridTextColumn Header="Họ Tên" Binding="{Binding FullName}" Width="*"/>
+                        <DataGridTextColumn Header="Giới tính" Binding="{Binding Gender}" Width="100"/>
+                        <DataGridTextColumn Header="Địa chỉ" Binding="{Binding Address}" Width="200"/>
+                        <DataGridTextColumn Header="Số điện thoại" Binding="{Binding PhoneNumber}" Width="150"/>
+                        <DataGridTemplateColumn Header="Hành động" Width="150">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                                        <Button Content="Sửa" 
+                                                Width="60" 
+                                                Height="25" 
+                                                Background="#FFFFC107" 
+                                                Foreground="White" 
+                                                Margin="0,0,5,0"
+                                                Command="{Binding DataContext.EditCustomerCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                                CommandParameter="{Binding}" />
+                                        <Button Content="Xóa" 
+                                                Width="60" 
+                                                Height="25" 
+                                                Background="#FFF44336" 
+                                                Foreground="White"
+                                                Command="{Binding DataContext.DeleteCustomerCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                                CommandParameter="{Binding}" />
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+
+        <!-- Right Section: Customer Details and Paid Invoices -->
+        <GroupBox Header="Chi tiết khách hàng" FontSize="16" FontWeight="Bold" Grid.Column="1">
+            <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10">
+                <StackPanel>
+                    <!-- Customer Information Form -->
+                    <StackPanel Orientation="Vertical" Margin="0,0,0,20">
+                        <!-- Full Name -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Họ Tên:" 
+                                       Width="120" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold"/>
+                            <TextBox Controls:TextBoxHelper.Watermark="Nhập họ tên" 
+                                     Text="{Binding SelectedCustomer.FullName, UpdateSourceTrigger=PropertyChanged}" 
+                                     Width="250"/>
+                        </StackPanel>
+
+                        <!-- Gender -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Giới tính:" 
+                                       Width="120" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold"/>
+                            <ComboBox SelectedItem="{Binding SelectedCustomer.Gender, UpdateSourceTrigger=PropertyChanged}" 
+                                      Width="250">
+                                <ComboBoxItem Content="Nam"/>
+                                <ComboBoxItem Content="Nữ"/>
+                                <ComboBoxItem Content="Khác"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <!-- Address -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Địa chỉ:" 
+                                       Width="120" 
+                                       VerticalAlignment="Top" 
+                                       FontWeight="Bold"/>
+                            <TextBox Controls:TextBoxHelper.Watermark="Nhập địa chỉ" 
+                                     Text="{Binding SelectedCustomer.Address, UpdateSourceTrigger=PropertyChanged}" 
+                                     Width="250" 
+                                     Height="60" 
+                                     TextWrapping="Wrap" 
+                                     AcceptsReturn="True"/>
+                        </StackPanel>
+
+                        <!-- Phone Number -->
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                            <TextBlock Text="Số điện thoại:" 
+                                       Width="120" 
+                                       VerticalAlignment="Center" 
+                                       FontWeight="Bold"/>
+                            <TextBox Controls:TextBoxHelper.Watermark="Nhập số điện thoại" 
+                                     Text="{Binding SelectedCustomer.PhoneNumber, UpdateSourceTrigger=PropertyChanged}" 
+                                     Width="250"/>
+                        </StackPanel>
+
+                        <!-- Notes -->
+                        <StackPanel Orientation="Vertical" Margin="0,0,0,10">
+                            <TextBlock Text="Ghi chú:" 
+                                       FontWeight="Bold" 
+                                       Margin="0,0,0,5"/>
+                            <TextBox Controls:TextBoxHelper.Watermark="Nhập ghi chú" 
+                                     Text="{Binding SelectedCustomer.Notes, UpdateSourceTrigger=PropertyChanged}" 
+                                     AcceptsReturn="True" 
+                                     Height="80" 
+                                     TextWrapping="Wrap"/>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <!-- Action Buttons -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,0,20">
+                        <Button Content="Lưu" 
+                                Width="100" 
+                                Height="35" 
+                                Background="#FF4CAF50" 
+                                Foreground="White" 
+                                FontWeight="Bold" 
+                                Command="{Binding SaveCustomerCommand}" 
+                                Margin="0,0,10,0"/>
+                        <Button Content="Hủy" 
+                                Width="100" 
+                                Height="35" 
+                                Background="#FFF44336" 
+                                Foreground="White" 
+                                FontWeight="Bold" 
+                                Command="{Binding CancelEditCommand}"/>
+                    </StackPanel>
+
+                    <!-- Paid Invoices Section -->
+                    <GroupBox Header="Hóa đơn đã thanh toán" FontSize="14" FontWeight="Bold">
+                        <DataGrid ItemsSource="{Binding SelectedCustomer.PaidInvoices}" 
+                                  AutoGenerateColumns="False" 
+                                  CanUserAddRows="False" 
+                                  CanUserDeleteRows="False" 
+                                  IsReadOnly="True" 
+                                  Height="200">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Mã HĐ" Binding="{Binding InvoiceId}" Width="100"/>
+                                <DataGridTextColumn Header="Ngày thanh toán" Binding="{Binding PaymentDate, StringFormat='dd/MM/yyyy'}" Width="150"/>
+                                <DataGridTextColumn Header="Số tiền" Binding="{Binding Amount, StringFormat='{}{0:N0} VND'}" Width="150"/>
+                                <DataGridTextColumn Header="Ghi chú" Binding="{Binding Notes}" Width="*"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </GroupBox>
+                </StackPanel>
+            </ScrollViewer>
+        </GroupBox>
     </Grid>
 </UserControl>
