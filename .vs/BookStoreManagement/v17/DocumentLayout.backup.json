@@ -1,0 +1,319 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\viewmodels\\shellviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\viewmodels\\shellviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\viewmodels\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\viewmodels\\menuitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\c6ee7f6fec133611eb2a064e1a788d1d2474410b0c2beae8c7d187c8d89dcad0\\ResourcePart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\views\\employeespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\views\\employeespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\mvvm\\delegatecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\mvvm\\delegatecommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\mvvm\\bindablebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\mvvm\\bindablebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\navigation\\frameanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\navigation\\frameanimator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\navigation\\navigationserviceex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\navigation\\navigationserviceex.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\views\\salespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\views\\salespage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\views\\statisticspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\views\\statisticspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\views\\productspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\views\\productspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\views\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\views\\homepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\views\\customerspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\views\\customerspage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|c:\\users\\hoang\\source\\repos\\bookstoremanagement\\bookstoremanagement\\views\\accountpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4650DCE8-2979-424F-906B-AA5A39C593D4}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\views\\accountpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{13b12e3e-c1b4-4539-9371-4fe9a0d523fc}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BindableBase.cs",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Mvvm\\BindableBase.cs",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Mvvm\\BindableBase.cs",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Mvvm\\BindableBase.cs",
+              "RelativeToolTip": "BookStoreManagement\\Mvvm\\BindableBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T10:40:05.347Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EmployeesPage.xaml",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\EmployeesPage.xaml",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Views\\EmployeesPage.xaml",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\EmployeesPage.xaml",
+              "RelativeToolTip": "BookStoreManagement\\Views\\EmployeesPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-24T10:24:35.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "BookStoreManagement\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\MainWindow.xaml.cs",
+              "RelativeToolTip": "BookStoreManagement\\MainWindow.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAABiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T08:18:18.139Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "FrameAnimator.cs",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Navigation\\FrameAnimator.cs",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Navigation\\FrameAnimator.cs",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Navigation\\FrameAnimator.cs",
+              "RelativeToolTip": "BookStoreManagement\\Navigation\\FrameAnimator.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T10:40:03.657Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "BookStoreManagement\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\MainWindow.xaml",
+              "RelativeToolTip": "BookStoreManagement\\MainWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-24T08:18:18.665Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "DelegateCommand.cs",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Mvvm\\DelegateCommand.cs",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Mvvm\\DelegateCommand.cs",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Mvvm\\DelegateCommand.cs",
+              "RelativeToolTip": "BookStoreManagement\\Mvvm\\DelegateCommand.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T10:40:06.18Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShellViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\ViewModels\\ShellViewModel.cs",
+              "RelativeDocumentMoniker": "BookStoreManagement\\ViewModels\\ShellViewModel.cs",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\ViewModels\\ShellViewModel.cs*",
+              "RelativeToolTip": "BookStoreManagement\\ViewModels\\ShellViewModel.cs*",
+              "ViewState": "AgIAACkAAAAAAAAAAAAwwDcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T10:21:11.316Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ResourcePart.cs",
+              "DocumentMoniker": "C:\\Users\\hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\c6ee7f6fec133611eb2a064e1a788d1d2474410b0c2beae8c7d187c8d89dcad0\\ResourcePart.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\c6ee7f6fec133611eb2a064e1a788d1d2474410b0c2beae8c7d187c8d89dcad0\\ResourcePart.cs",
+              "ToolTip": "C:\\Users\\hoang\\AppData\\Local\\Temp\\.vsdbgsrc\\c6ee7f6fec133611eb2a064e1a788d1d2474410b0c2beae8c7d187c8d89dcad0\\ResourcePart.cs [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\AppData\\Local\\Temp\\.vsdbgsrc\\c6ee7f6fec133611eb2a064e1a788d1d2474410b0c2beae8c7d187c8d89dcad0\\ResourcePart.cs [Read Only]",
+              "ViewState": "AgIAABwAAAAAAAAAAAArwCwAAAAAAAAAAQAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T10:42:09.169Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MenuItem.cs",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\ViewModels\\MenuItem.cs",
+              "RelativeDocumentMoniker": "BookStoreManagement\\ViewModels\\MenuItem.cs",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\ViewModels\\MenuItem.cs",
+              "RelativeToolTip": "BookStoreManagement\\ViewModels\\MenuItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T10:21:11.841Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "NavigationServiceEx.cs",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Navigation\\NavigationServiceEx.cs",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Navigation\\NavigationServiceEx.cs",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Navigation\\NavigationServiceEx.cs",
+              "RelativeToolTip": "BookStoreManagement\\Navigation\\NavigationServiceEx.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-24T10:40:02.869Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "SalesPage.xaml",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\SalesPage.xaml",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Views\\SalesPage.xaml",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\SalesPage.xaml",
+              "RelativeToolTip": "BookStoreManagement\\Views\\SalesPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-24T10:26:41.895Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "StatisticsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\StatisticsPage.xaml",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Views\\StatisticsPage.xaml",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\StatisticsPage.xaml",
+              "RelativeToolTip": "BookStoreManagement\\Views\\StatisticsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-24T10:23:35.472Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProductsPage.xaml",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\ProductsPage.xaml",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Views\\ProductsPage.xaml",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\ProductsPage.xaml",
+              "RelativeToolTip": "BookStoreManagement\\Views\\ProductsPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-24T10:22:56.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HomePage.xaml",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\HomePage.xaml",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Views\\HomePage.xaml",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\HomePage.xaml",
+              "RelativeToolTip": "BookStoreManagement\\Views\\HomePage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-24T08:28:54.196Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\App.xaml",
+              "RelativeDocumentMoniker": "BookStoreManagement\\App.xaml",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\App.xaml",
+              "RelativeToolTip": "BookStoreManagement\\App.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-24T10:17:03.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CustomersPage.xaml",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\CustomersPage.xaml",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Views\\CustomersPage.xaml",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\CustomersPage.xaml",
+              "RelativeToolTip": "BookStoreManagement\\Views\\CustomersPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-24T10:24:27.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "AccountPage.xaml",
+              "DocumentMoniker": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\AccountPage.xaml",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Views\\AccountPage.xaml",
+              "ToolTip": "C:\\Users\\hoang\\source\\repos\\BookStoreManagement\\BookStoreManagement\\Views\\AccountPage.xaml",
+              "RelativeToolTip": "BookStoreManagement\\Views\\AccountPage.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-09-24T10:23:59.635Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
