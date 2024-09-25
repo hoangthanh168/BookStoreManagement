@@ -1,0 +1,81 @@
+erDiagram
+
+    %% Book Table (Sach)
+    BOOK {
+        int BookID PK
+        string BookName
+        float Price
+        int Quantity
+        int AuthorID FK
+        int GenreID FK
+    }
+
+    %% Author Table (TacGia)
+    AUTHOR {
+        int AuthorID PK
+        string AuthorName
+    }
+
+    %% Genre Table (TheLoai)
+    GENRE {
+        int GenreID PK
+        string GenreName
+    }
+
+    %% Invoice Table (HoaDon)
+    INVOICE {
+        int InvoiceID PK
+        date InvoiceDate
+        float AmountPaid
+        float TotalAmount
+        int CustomerID FK
+        int EmployeeID FK
+    }
+
+    %% Invoice Detail Table (ChiTietHoaDon)
+    INVOICEDETAIL {
+        int InvoiceDetailID PK
+        int Quantity
+        float SalePrice
+        int BookID FK
+        int InvoiceID FK
+    }
+
+    %% Account Table (TaiKhoan)
+    ACCOUNT {
+        int AccountID PK
+        string Email
+        string Password
+        string FullName
+        boolean IsAdmin
+    }
+
+    %% Customer Table (KhachHang)
+    CUSTOMER {
+        int CustomerID PK
+        string FullName
+        string Address
+        string PhoneNumber
+        string Email
+    }
+
+    %% Employee Table (NhanVien)
+    EMPLOYEE {
+        int EmployeeID PK
+        string FullName
+        string Address
+        string PhoneNumber
+        string Email
+        int AccountID FK
+        date HireDate
+    }
+
+    %% Relationships
+    BOOK ||--o{ AUTHOR : "has"
+    BOOK ||--o{ GENRE : "categorized as"
+    INVOICE ||--o{ CUSTOMER : "belongs to"
+    INVOICE ||--o{ EMPLOYEE : "handled by"
+    INVOICEDETAIL ||--o{ BOOK : "contains"
+    INVOICEDETAIL ||--o{ INVOICE : "part of"
+    EMPLOYEE ||--o{ ACCOUNT : "has"
+
