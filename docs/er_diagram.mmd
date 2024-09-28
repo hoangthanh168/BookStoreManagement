@@ -57,6 +57,7 @@ erDiagram
         string Address
         string PhoneNumber
         string Email
+        date BirthDate
     }
 
     %% Employee Table (NhanVien)
@@ -68,6 +69,7 @@ erDiagram
         string Email
         int AccountID FK
         date HireDate
+        date BirthDate
     }
 
     %% Relationships
@@ -78,4 +80,3 @@ erDiagram
     INVOICEDETAIL ||--o{ BOOK : "contains"
     INVOICEDETAIL ||--o{ INVOICE : "part of"
     EMPLOYEE ||--o{ ACCOUNT : "has"
-
