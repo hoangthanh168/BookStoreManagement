@@ -1,4 +1,3 @@
-erDiagram
 
     %% Book Table (Sach)
     BOOK {
@@ -8,6 +7,7 @@ erDiagram
         int Quantity
         int AuthorID FK
         int GenreID FK
+        string BookImage
     }
 
     %% Author Table (TacGia)
@@ -73,10 +73,11 @@ erDiagram
     }
 
     %% Relationships
-    BOOK ||--o{ AUTHOR : "has"
+    BOOK ||--o{ AUTHOR : "written by"
     BOOK ||--o{ GENRE : "categorized as"
-    INVOICE ||--o{ CUSTOMER : "belongs to"
-    INVOICE ||--o{ EMPLOYEE : "handled by"
-    INVOICEDETAIL ||--o{ BOOK : "contains"
+    INVOICE ||--o{ CUSTOMER : "issued to"
+    INVOICE ||--o{ EMPLOYEE : "processed by"
+    INVOICEDETAIL ||--o{ BOOK : "for"
     INVOICEDETAIL ||--o{ INVOICE : "part of"
-    EMPLOYEE ||--o{ ACCOUNT : "has"
+    EMPLOYEE ||--o{ ACCOUNT : "linked to"
+    ACCOUNT ||--o{ EMPLOYEE : "used by"
