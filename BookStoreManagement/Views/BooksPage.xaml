@@ -1,0 +1,366 @@
+﻿<UserControl
+    x:Class="BookStoreManagement.Views.BooksPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:converters="clr-namespace:BookStoreManagement.Converters"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:iconPacks="http://metro.mahapps.com/winfx/xaml/iconpacks"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:models="clr-namespace:BookStoreManagement.Models"
+    mc:Ignorable="d">
+
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*" />
+            <ColumnDefinition Width="2*" />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox
+            Margin="0,0,10,0"
+            FontSize="16"
+            Header="Danh mục sách">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel
+                    Grid.Row="0"
+                    Margin="0,0,0,10"
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Center"
+                    Orientation="Horizontal">
+                    <TextBox
+                        Width="250"
+                        Margin="0,0,10,0"
+                        controls:TextBoxHelper.Watermark="Tìm kiếm sách..."
+                        Text="{Binding SearchKeyword, UpdateSourceTrigger=PropertyChanged}" />
+                    <Button
+                        Width="100"
+                        Height="30"
+                        Margin="0,0,10,0"
+                        Background="#FF2196F3"
+                        Command="{Binding SearchCommand}"
+                        Foreground="White">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <iconPacks:PackIconMaterial
+                                Width="16"
+                                Height="16"
+                                Margin="0,0,5,0"
+                                Kind="Magnify" />
+                            <TextBlock VerticalAlignment="Center" Text="Tìm kiếm" />
+                        </StackPanel>
+                    </Button>
+                    <Button
+                        Width="120"
+                        Height="30"
+                        Background="#FF4CAF50"
+                        Command="{Binding AddBookCommand}"
+                        Foreground="White">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <iconPacks:PackIconMaterial
+                                Width="16"
+                                Height="16"
+                                Margin="0,0,5,0"
+                                Kind="Plus" />
+                            <TextBlock VerticalAlignment="Center" Text="Thêm sách" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <DataGrid
+                    Grid.Row="1"
+                    Margin="0,0,0,0"
+                    AutoGenerateColumns="False"
+                    CanUserAddRows="False"
+                    CanUserDeleteRows="False"
+                    IsReadOnly="True"
+                    ItemsSource="{Binding Books}"
+                    SelectedItem="{Binding SelectedBook}"
+                    SelectionMode="Single"
+                    SelectionUnit="FullRow">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn
+                            Width="50"
+                            Binding="{Binding BookID}"
+                            Header="ID" />
+                        <DataGridTextColumn
+                            Width="*"
+                            Binding="{Binding BookName}"
+                            Header="Tên sách" />
+                        <DataGridTextColumn
+                            Width="150"
+                            Binding="{Binding Author.AuthorName}"
+                            Header="Tác giả" />
+                        <DataGridTextColumn
+                            Width="100"
+                            Binding="{Binding Price, StringFormat='{}{0:N0} VND'}"
+                            Header="Giá" />
+                        <DataGridTextColumn
+                            Width="80"
+                            Binding="{Binding Quantity}"
+                            Header="Số lượng" />
+                        <DataGridTemplateColumn Width="150" Header="Thể loại" />
+                        <DataGridTemplateColumn Width="150" Header="Hành động">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                        <Button
+                                            Width="60"
+                                            Height="25"
+                                            Background="#FFF44336"
+                                            Command="{Binding DataContext.DeleteBookCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}"
+                                            CommandParameter="{Binding}"
+                                            Foreground="White"
+                                            ToolTip="Xóa">
+                                            <iconPacks:PackIconMaterial
+                                                Width="16"
+                                                Height="16"
+                                                Kind="Delete" />
+                                        </Button>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox
+            Grid.Column="1"
+            FontSize="16"
+            Header="Chi tiết sách">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel
+                    Grid.Row="0"
+                    Margin="10,10,0,0"
+                    HorizontalAlignment="Right"
+                    Orientation="Horizontal">
+                    <Button
+                        Width="100"
+                        Height="35"
+                        Background="#FF4CAF50"
+                        Command="{Binding SaveBookCommand}"
+                        Foreground="White">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <iconPacks:PackIconMaterial
+                                Width="16"
+                                Height="16"
+                                Margin="0,0,5,0"
+                                Kind="ContentSave" />
+                            <TextBlock VerticalAlignment="Center" Text="Lưu" />
+                        </StackPanel>
+                    </Button>
+                </StackPanel>
+
+                <Grid Grid.Row="1" Margin="0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Border
+                        Grid.Row="0"
+                        Padding="5"
+                        HorizontalAlignment="Stretch"
+                        VerticalAlignment="Stretch"
+                        BorderBrush="Gray"
+                        BorderThickness="2"
+                        CornerRadius="10">
+                        <Image
+                            Width="Auto"
+                            Height="Auto"
+                            Source="{Binding SelectedBook.BookImagePath, UpdateSourceTrigger=PropertyChanged}"
+                            Stretch="Uniform" />
+                    </Border>
+
+                    <Button
+                        Grid.Row="1"
+                        Width="100"
+                        Height="30"
+                        Margin="0,10,0,0"
+                        HorizontalAlignment="Left"
+                        Background="#FF2196F3"
+                        Command="{Binding SelectImageCommand}"
+                        Foreground="White">
+                        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                            <iconPacks:PackIconMaterial
+                                Width="16"
+                                Height="16"
+                                Margin="0,0,5,0"
+                                Kind="ImagePlus" />
+                            <TextBlock VerticalAlignment="Center" Text="Chọn ảnh" />
+                        </StackPanel>
+                    </Button>
+                </Grid>
+
+                <ScrollViewer
+                    Grid.Row="2"
+                    Margin="10"
+                    VerticalScrollBarVisibility="Auto">
+                    <StackPanel Margin="5">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                Margin="0,5,10,5"
+                                VerticalAlignment="Center"
+                                Text="Tên sách:" />
+                            <TextBox
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                Margin="0,5,20,5"
+                                HorizontalAlignment="Stretch"
+                                controls:TextBoxHelper.Watermark="Nhập tên sách"
+                                Text="{Binding SelectedBook.BookName, UpdateSourceTrigger=PropertyChanged}" />
+
+                            <TextBlock
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Margin="0,5,10,5"
+                                VerticalAlignment="Center"
+                                Text="Giá:" />
+                            <TextBox
+                                Grid.Row="1"
+                                Grid.Column="1"
+                                Margin="0,5,20,5"
+                                HorizontalAlignment="Stretch"
+                                controls:TextBoxHelper.Watermark="Nhập giá"
+                                Text="{Binding SelectedBook.Price, UpdateSourceTrigger=PropertyChanged}" />
+
+                            <TextBlock
+                                Grid.Row="2"
+                                Grid.Column="0"
+                                Margin="0,5,10,5"
+                                VerticalAlignment="Center"
+                                Text="Số lượng:" />
+                            <TextBox
+                                Grid.Row="2"
+                                Grid.Column="1"
+                                Margin="0,5,20,5"
+                                HorizontalAlignment="Stretch"
+                                controls:TextBoxHelper.Watermark="Nhập số lượng"
+                                Text="{Binding SelectedBook.Quantity, UpdateSourceTrigger=PropertyChanged}" />
+
+                            <TextBlock
+                                Grid.Row="3"
+                                Grid.Column="0"
+                                Margin="0,5,10,5"
+                                VerticalAlignment="Center"
+                                Text="Thể loại:" />
+
+                            <Grid
+                                Grid.Row="3"
+                                Grid.Column="1"
+                                Margin="0,5,0,5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <ListBox
+                                    x:Name="GenreListBox"
+                                    Grid.Row="0"
+                                    Height="100"
+                                    HorizontalAlignment="Stretch"
+                                    DisplayMemberPath="GenreName"
+                                    ItemsSource="{Binding Genres}"
+                                    SelectionChanged="ListBox_SelectionChanged"
+                                    SelectionMode="Multiple" />
+
+                                <Button
+                                    Grid.Row="1"
+                                    Height="30"
+                                    Margin="0,10,0,0"
+                                    HorizontalAlignment="Stretch"
+                                    Command="{Binding OpenAddGenreWindowCommand}">
+                                    <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                                        <iconPacks:PackIconMaterial
+                                            Width="16"
+                                            Height="16"
+                                            Margin="0,0,5,0"
+                                            Kind="Plus" />
+                                        <TextBlock VerticalAlignment="Center" Text="Thêm thể loại" />
+                                    </StackPanel>
+                                </Button>
+                            </Grid>
+
+                            <TextBlock
+                                Grid.Row="4"
+                                Grid.Column="0"
+                                Margin="0,5,10,5"
+                                VerticalAlignment="Center"
+                                Text="Tác giả:" />
+                            <Grid
+                                Grid.Row="4"
+                                Grid.Column="1"
+                                Margin="0,5,0,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <ComboBox
+                                    Grid.Column="0"
+                                    HorizontalAlignment="Stretch"
+                                    DisplayMemberPath="AuthorName"
+                                    ItemsSource="{Binding Authors}"
+                                    SelectedItem="{Binding SelectedBook.Author}" />
+                                <Button
+                                    Grid.Column="1"
+                                    Width="30"
+                                    Height="30"
+                                    Margin="5,0,0,0"
+                                    Command="{Binding OpenAddAuthorWindowCommand}">
+                                    <iconPacks:PackIconMaterial
+                                        Width="16"
+                                        Height="16"
+                                        Kind="Plus" />
+                                </Button>
+                            </Grid>
+
+                            <TextBlock
+                                Grid.Row="5"
+                                Grid.Column="0"
+                                Margin="0,5,10,5"
+                                VerticalAlignment="Center"
+                                Text="Mô tả:" />
+                            <TextBox
+                                Grid.Row="5"
+                                Grid.Column="1"
+                                Height="100"
+                                Margin="0,5,0,5"
+                                HorizontalAlignment="Stretch"
+                                controls:TextBoxHelper.Watermark="Nhập mô tả sách"
+                                AcceptsReturn="True"
+                                Text="{Binding SelectedBook.Description, UpdateSourceTrigger=PropertyChanged}"
+                                TextWrapping="Wrap" />
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</UserControl>

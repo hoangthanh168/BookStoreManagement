@@ -1,18 +1,9 @@
-﻿using MahApps.Metro.Controls;
+﻿using BookStoreManagement.Views;
+using MahApps.Metro.Controls;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using MenuItem = BookStoreManagement.ViewModels.MenuItem;
 
 namespace BookStoreManagement
@@ -74,6 +65,23 @@ namespace BookStoreManagement
         private void GoBack_OnClick(object sender, RoutedEventArgs e)
         {
             this.navigationServiceEx.GoBack();
+        }
+
+        private void AccountButton_OnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void LogoutButton_OnClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void InfoButton_OnClick(object sender, RoutedEventArgs e)
+        {
+            AboutWindow aboutWindow = new AboutWindow();
+            aboutWindow.Owner = this;
+            aboutWindow.ShowDialog();
         }
     }
 }

@@ -1,8 +1,8 @@
-﻿using System;
-using System.Collections.ObjectModel;
-using MahApps.Metro.IconPacks;
-using BookStoreManagement.Mvvm;
+﻿using BookStoreManagement.Mvvm;
 using BookStoreManagement.Views;
+using MahApps.Metro.IconPacks;
+using System;
+using System.Collections.ObjectModel;
 
 namespace BookStoreManagement.ViewModels
 {
@@ -32,8 +32,8 @@ namespace BookStoreManagement.ViewModels
             {
                 Icon = new PackIconBoxIcons() { Kind = PackIconBoxIconsKind.RegularBox },
                 Label = "Sản phẩm",
-                NavigationType = typeof(ProductsPage),
-                NavigationDestination = new Uri("Views/ProductsPage.xaml", UriKind.RelativeOrAbsolute)
+                NavigationType = typeof(BooksPage),
+                NavigationDestination = new Uri("Views/BooksPage.xaml", UriKind.RelativeOrAbsolute)
             });
             this.Menu.Add(new MenuItem()
             {

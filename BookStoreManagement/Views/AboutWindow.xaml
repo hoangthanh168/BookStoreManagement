@@ -1,0 +1,52 @@
+﻿<controls:MetroWindow
+    x:Class="BookStoreManagement.Views.AboutWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Thông tin"
+    ResizeMode="NoResize"
+    SizeToContent="WidthAndHeight"
+    WindowStartupLocation="CenterOwner"
+    mc:Ignorable="d">
+
+    <Grid Margin="20">
+        <StackPanel>
+            <TextBlock
+                Margin="0,0,0,20"
+                HorizontalAlignment="Center"
+                FontSize="18"
+                FontWeight="Bold"
+                Text="Thông tin người tạo ứng dụng" />
+
+            <TextBlock
+                Margin="0,0,0,10"
+                FontSize="14"
+                FontWeight="SemiBold"
+                Text="Nhóm sinh viên:" />
+
+            <StackPanel Margin="20,0,0,0">
+                <TextBlock FontSize="14" Text="• Hoàng Đức Thành" />
+                <TextBlock FontSize="14" Text="• Nguyễn Hoàng Sang" />
+                <TextBlock FontSize="14" Text="• Lê Khánh Thiện" />
+                <TextBlock FontSize="14" Text="• Trần Duy Nhật Quang" />
+            </StackPanel>
+
+            <TextBlock
+                Margin="0,20,0,0"
+                FontSize="14"
+                FontWeight="SemiBold"
+                Text="Môn học: Phát triển ứng dụng Desktop - K46"
+                TextAlignment="Center" />
+
+            <Button
+                Width="80"
+                Height="30"
+                Margin="0,20,0,0"
+                HorizontalAlignment="Center"
+                Click="CloseButton_Click"
+                Content="Đóng" />
+        </StackPanel>
+    </Grid>
+</controls:MetroWindow>

@@ -1,0 +1,49 @@
+﻿<UserControl
+    x:Class="BookStoreManagement.Views.LoginPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:controls="http://metro.mahapps.com/winfx/xaml/controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:BookStoreManagement.Views"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid>
+        <Border
+            Padding="50"
+            Background="#FFEEEEEE"
+            CornerRadius="10">
+            <StackPanel
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center">
+                <TextBlock
+                    Margin="0,0,0,20"
+                    HorizontalAlignment="Center"
+                    FontSize="30"
+                    FontWeight="Bold"
+                    Foreground="#333333"
+                    Text="Đăng Nhập" />
+                <TextBlock
+                    Margin="0,0,0,5"
+                    FontSize="14"
+                    Text="Tên người dùng:" />
+                <TextBox Name="UsernameTextBox" controls:TextBoxHelper.Watermark="Nhập tên người dùng của bạn" />
+                <TextBlock
+                    Margin="10,20,0,5"
+                    FontSize="14"
+                    Text="Mật khẩu:" />
+                <PasswordBox Name="PasswordBox" controls:TextBoxHelper.Watermark="Nhập mật khẩu của bạn" />
+                <Button
+                    Width="100"
+                    Margin="0,20,0,0"
+                    HorizontalAlignment="Center"
+                    Command="{Binding LoginCommand}"
+                    Content="Đăng nhập" />
+                <TextBlock
+                    Margin="0,10,0,0"
+                    Foreground="Red"
+                    Text="{Binding ErrorMessage}"
+                    Visibility="{Binding IsErrorVisible, Converter={StaticResource BooleanToVisibilityConverter}}" />
+            </StackPanel>
+        </Border>
+    </Grid>
+</UserControl>
