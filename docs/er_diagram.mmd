@@ -1,54 +1,34 @@
 erDiagram
 
-       %% Book Table (Sach)
     BOOK {
         int BookID PK
         string BookName
         float Price
         int Quantity
         int AuthorID FK
+        string BookImagePath
+        string Description
     }
 
-    %% Author Table (TacGia)
     AUTHOR {
         int AuthorID PK
         string AuthorName
     }
 
-    %% Genre Table (TheLoai)
+    AUTHOR ||--o{ BOOK : "viết"
+
     GENRE {
         int GenreID PK
         string GenreName
     }
 
-    %% Invoice Table (HoaDon)
-    INVOICE {
-        int InvoiceID PK
-        date InvoiceDate
-        float AmountPaid
-        int CustomerID FK
-        int EmployeeID FK
-    }
-
-    %% Invoice Detail Table (ChiTietHoaDon)
-    INVOICEDETAIL {
-        int InvoiceDetailID PK
-        int Quantity
-        float SalePrice
+    BOOK_GENRE {
         int BookID FK
-        int InvoiceID FK
+        int GenreID FK
     }
 
-    %% Account Table (TaiKhoan)
-    ACCOUNT {
-        int AccountID PK
-        string Email
-        string Password
-        string FullName
-        boolean IsAdmin
-    }
+    BOOK }o--o{ GENRE : "thuộc"
 
-    %% Customer Table (KhachHang)
     CUSTOMER {
         int CustomerID PK
         string FullName
@@ -60,8 +40,16 @@ erDiagram
         date CreatedDate 
     }
 
-    %% Employee Table (NhanVien)
-     %% Employee Table (NhanVien) - Updated with AvatarImagePath
+    INVOICE {
+        int InvoiceID PK
+        date InvoiceDate
+        float AmountPaid
+        int CustomerID FK
+        int EmployeeID FK
+    }
+
+    CUSTOMER ||--o{ INVOICE : "có"
+
     EMPLOYEE {
         int EmployeeID PK
         string FullName
@@ -73,20 +61,28 @@ erDiagram
         date BirthDate
         string Note
         string AvatarImagePath
+        string Gender
     }
 
-    %% Bảng trung gian giữa BOOK và GENRE (Quan hệ nhiều - nhiều)
-    BOOK_GENRE {
+    ACCOUNT {
+        int AccountID PK
+        string Username
+        string Password
+        boolean IsAdmin
+    }
+
+    EMPLOYEE ||--|| ACCOUNT : "sở hữu"
+
+    EMPLOYEE ||--o{ INVOICE : "xử lý"
+
+    INVOICEDETAIL {
+        int InvoiceDetailID PK
+        int Quantity
+        float SalePrice
         int BookID FK
-        int GenreID FK
+        int InvoiceID FK
     }
 
-    %% Relationships
-    BOOK ||--o{ AUTHOR : "has"
-    BOOK ||--o{ BOOK_GENRE : "categorized as"
-    GENRE ||--o{ BOOK_GENRE : "contains"
-    INVOICE ||--o{ CUSTOMER : "belongs to"
-    INVOICE ||--o{ EMPLOYEE : "handled by"
-    INVOICEDETAIL ||--o{ BOOK : "contains"
-    INVOICEDETAIL ||--o{ INVOICE : "part of"
-    EMPLOYEE ||--|| ACCOUNT : "has"
+    INVOICE ||--o{ INVOICEDETAIL : "chứa"
+    BOOK ||--o{ INVOICEDETAIL : "xuất hiện trong"
+
