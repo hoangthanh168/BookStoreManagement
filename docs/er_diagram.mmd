@@ -1,14 +1,12 @@
 erDiagram
 
-    %% Book Table (Sach)
+       %% Book Table (Sach)
     BOOK {
         int BookID PK
         string BookName
         float Price
         int Quantity
         int AuthorID FK
-        int GenreID FK
-        string BookImage
     }
 
     %% Author Table (TacGia)
@@ -28,7 +26,6 @@ erDiagram
         int InvoiceID PK
         date InvoiceDate
         float AmountPaid
-        float TotalAmount
         int CustomerID FK
         int EmployeeID FK
     }
@@ -59,6 +56,8 @@ erDiagram
         string PhoneNumber
         string Email
         date BirthDate
+        string Note
+        date CreatedDate 
     }
 
     %% Employee Table (NhanVien)
@@ -71,14 +70,21 @@ erDiagram
         int AccountID FK
         date HireDate
         date BirthDate
+        string Note
+    }
+
+    %% Bảng trung gian giữa BOOK và GENRE (Quan hệ nhiều - nhiều)
+    BOOK_GENRE {
+        int BookID FK
+        int GenreID FK
     }
 
     %% Relationships
-    BOOK ||--o{ AUTHOR : "written by"
-    BOOK ||--o{ GENRE : "categorized as"
-    INVOICE ||--o{ CUSTOMER : "issued to"
-    INVOICE ||--o{ EMPLOYEE : "processed by"
-    INVOICEDETAIL ||--o{ BOOK : "for"
+    BOOK ||--o{ AUTHOR : "has"
+    BOOK ||--o{ BOOK_GENRE : "categorized as"
+    GENRE ||--o{ BOOK_GENRE : "contains"
+    INVOICE ||--o{ CUSTOMER : "belongs to"
+    INVOICE ||--o{ EMPLOYEE : "handled by"
+    INVOICEDETAIL ||--o{ BOOK : "contains"
     INVOICEDETAIL ||--o{ INVOICE : "part of"
-    EMPLOYEE ||--o{ ACCOUNT : "linked to"
-    ACCOUNT ||--o{ EMPLOYEE : "used by"
+    EMPLOYEE ||--|| ACCOUNT : "has"
