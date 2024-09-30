@@ -1,7 +1,7 @@
 # BookStoreManagement
 
 ## Mô tả
-BookStoreManagement là một ứng dụng quản lý cửa hàng bán sách CƠ BẢN, cho phép quản lý danh sách sách, hóa đơn, khách hàng, nhân viên, và doanh thu. Ứng dụng được phát triển bằng WPF (Windows Presentation Foundation) và tuân theo mô hình MVVM.
+BookStoreManagement là một ứng dụng quản lý cửa hàng bán sách CƠ BẢN được thực hiện nhằm đáp ứng yêu cầu môn học Lập trình ứng dụng Desktop, cho phép quản lý danh sách sách, hóa đơn, khách hàng, nhân viên, và doanh thu. Ứng dụng được phát triển bằng WPF (Windows Presentation Foundation) và tuân theo mô hình MVVM.
 
 ## Tính năng
 - **Quản lý sách:** Thêm, sửa, xóa và tìm kiếm sách trong kho hàng.
