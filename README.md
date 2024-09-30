@@ -36,7 +36,7 @@ cd BookStoreManagement
 sử dụng **NuGet Package Manager** để cài đặt các package thiếu.
 
 ### 4. Cấu hình chuỗi kết nối
-Chỉnh sửa file `App.config` trong dự án `BookStoreManagement.Data` để cấu hình chuỗi kết nối đến SQL Server.
+Chỉnh sửa file `App.config` trong dự án `BookStoreManagement` để cấu hình chuỗi kết nối đến SQL Server.
 ```xml
 <connectionStrings>
     <add name="DefaultConnection" connectionString="Data Source=YOUR_SERVER;Initial Catalog=BookStoreDB;Integrated Security=True" providerName="System.Data.SqlClient" />
