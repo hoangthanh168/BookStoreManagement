@@ -50,7 +50,3 @@ Enable-Migrations
 Add-Migration InitialCreate
 Update-Database
 ```
-
-### 6. Chạy Ứng dụng
-- **BookStoreManagement.Data:** Chạy dự án này để khởi động dịch vụ xử lý dữ liệu.
-- **BookStoreManagement:** Chạy dự án `BookStoreManagement` để mở giao diện người dùng.
